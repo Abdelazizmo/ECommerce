@@ -17,7 +17,9 @@ namespace ECommerce.Controllers
         }
         public async Task <IActionResult> Index()
         {
-            var Result = await _context.Categories.ToListAsync();
+            var Result = await _context.Products
+                .Include(x=>x.Category).OrderBy(x=>x.Price)
+                .ToListAsync();
             return View(Result);
         }
     }
