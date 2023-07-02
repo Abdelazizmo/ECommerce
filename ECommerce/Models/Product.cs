@@ -1,4 +1,5 @@
-﻿using ECommerce.Enums.Data;
+﻿using ECommerce.Data.Base;
+using ECommerce.Enums.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ECommerce.Models
 {
-    public class Product
+    public class Product :IBaseEntity
     {
         public int Id { get; set; }
         public String Name { get; set; }
